@@ -5,20 +5,24 @@ import { Dropdown } from '../Dropdown';
 
 
 
-const NavBar = () => {
-  const [dropDown, setDropDown] = useState(false)
 
-  
+const NavBar = () => {
+  const [dropDown, setDropDown] = useState({
+    isVisible: false,
+     id: null,
+    })
+
   return (
-      <ul className='flex ml-10 text-[#696969] font-medium'>
+      <ul className='md:flex mr-14 sm:ml-0 text-[#696969] font-medium
+      hidden'>
         {
             menuLinks.map((item)  => {
-              if (item.title === "Features") {
+              if (item.dropdown) {
                 return(
                     <li
                   key={item.id}
-                  onMouseEnter={() => setDropDown(true)}
-                  onMouseLeave={() => setDropDown(false)}>
+                  onMouseEnter={() => setDropDown({isVisible: true, id: item.id})}
+                  onMouseLeave={() => setDropDown({isVisible: false, id: null})}>
                     <LinkItem 
                     title={item.title} 
                     to={item.path}
@@ -26,10 +30,15 @@ const NavBar = () => {
                     icon={item.icon}
                    />
                  
-                  {dropDown && <Dropdown/>}
+                  {dropDown.isVisible && dropDown.id === item.id && item.dropdown && <Dropdown 
+                  dropdownList={item.dropdown}
+                  title={item.title}/>}
                   </li>
                   );
+                  
                 }
+               
+                
                   
               return(
                 <LinkItem 
@@ -37,11 +46,13 @@ const NavBar = () => {
                 to={item.path} 
                 key={item.id}
                 icon={item.icon}/>
-                )})     
+                )})  
+               
         }
         
+       
       </ul>
-  )
+      )
 }
 
 export default NavBar;

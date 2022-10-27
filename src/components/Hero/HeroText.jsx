@@ -2,7 +2,7 @@ import React from 'react'
 
 export const HeroText = () => {
   return (
-    <div className=' flex-1 px-[200px] mt-[150px]'>
+    <div className=' flex-1  mt-[150px]'>
         <h1 className='text-[#141414] text-5xl pr-14
         font-bold'>Make</h1>
         <h1 className='text-5xl font-bold mb-6 pr-9 '>remote work</h1>

@@ -1,19 +1,19 @@
 import { DropdownItems1, DropdownItems2 } from "./DropdownItems";
 
 
-export const menuLinks = [
+export const SideBarMenu = [
     {
         id: 1,
         title: "Features",
         path: "/features",
-        icon: "images/icon-arrow-up.svg",
+        icon: "images/icon-arrow-down.svg",
         dropdown: DropdownItems1
     },
     {
         id: 2,
         title: "Company",
         path: "/company",
-        icon: "images/icon-arrow-up.svg",
+        icon: "images/icon-arrow-down.svg",
         dropdown: DropdownItems2
     },
     {
