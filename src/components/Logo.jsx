@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 // import {menuLinks} from '../../helpers/data'
 
-export const Logo = (item) => {
+export const Logo = () => {
   return (
     <Link to="/">
-     <h1 className="sm:text-3xl font-bold text-[#141414] mr-7
-     text-2xl ml-11">Snap</h1>
-     </Link>
-   
-  )
-}
+      <h1 className="font-bold text-[#141414] text-4xl static ml-[-60px] md:mr-6">
+        snap
+      </h1>
+    </Link>
+  );
+};
